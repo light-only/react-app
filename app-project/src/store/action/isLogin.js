@@ -1,15 +1,14 @@
-import {getLogin} from "../../api";
+import {getIsLogin} from "../../api";
 
-export default  function login(){
+export default  function isLogin(){
     return function (dispatch){
-       return getLogin().then(res=>{
-            if(res.code === 0){
+       return getIsLogin().then(res=>{
+            if(res.code === 1){
                 dispatch({
                     type:'LOGIN',
                     user:res.data.username
                 })
             }
-            return res.data;
         })
     }
 }

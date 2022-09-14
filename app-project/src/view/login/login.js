@@ -11,11 +11,10 @@ function LoginPage (props) {
     const navigate = useNavigate();
     //点击登录
     function toLogin (){
-        const nums = login({username,password});
-        const {data} = store.dispatch(nums);
-        if(data.code === 200 && data.message === '登录成功'){
-            navigate('/home');
-        }
+        console.log(props,'2222')
+        props.dispatch(login()).then(res=>{
+            navigate('/home')
+        })
     }
 
     return (

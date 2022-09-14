@@ -1,9 +1,11 @@
+import Frame from "../../common/component/frame";
 
 function Lecturer(){
     return (
-        <>
-            这是讲师
-        </>
+            <div style={{height:`100vh`,paddingTop:"1.2rem"}}>
+                这是讲师
+            </div>
+
     )
 }
 

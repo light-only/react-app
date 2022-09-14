@@ -2,7 +2,7 @@ import {createStore,applyMiddleware,combineReducers} from 'redux';
 
 import Thunk from 'redux-thunk';
 
-import reducer from "../reducer";
+import reducer from "./reducers/index";
 
 const store = createStore(
     //combineReducers:合并reducer的作用，把多个reducer合并成一个reducer

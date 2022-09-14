@@ -26,12 +26,14 @@
 }
 .header-user {
   display: block;
-  padding-right: .1rem;
+  padding-right: .2rem;
   text-align: right;
   overflow: hidden;
-  font-size: .26rem;
+  font-size: .4rem;
+  /*font-size: .26rem;*/
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
+  font-weight: 700;
 }
 .header-btn-right {
   right: 0;

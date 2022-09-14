@@ -1,14 +1,22 @@
-import Header from "./header";
-import Menu from "./menu";
+
+import {useInnerHeight} from "../hook/index";
 import '../css/reset.css';
 import '../css/common.css';
+// eslint-disable-next-line react-hooks/rules-of-hooks
+let innerH = useInnerHeight();
 function Frame(props){
     console.log(props);
     return (
         <>
-            <Menu/>
-            <div id="main">
-                {props.children}
+            <div
+                id="main"
+                style={{
+                    height: innerH
+                }}
+            >
+                    <div>
+                        {props.children}
+                    </div>
             </div>
 
         </>

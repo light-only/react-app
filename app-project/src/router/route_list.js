@@ -9,8 +9,8 @@ import Lecturer from '../view/lecturer/index'
 const routeList = [
     {
         name:'首页',
-        path:'',
-        exact:true,//是否精确匹配
+        path:'/home',
+        exact:true,
         element:<Index/>
     },
     {
@@ -39,4 +39,25 @@ const routeList = [
     }
 ]
 
-export default routeList;
+const nav = [
+    {
+        name:'课程安排',
+        path:'/course',
+        exact:true,
+        element:<Course/>
+    },
+    {
+        name:'学生作品',
+        path:'/works',
+        exact:true,
+        element:<Works/>
+    },
+    {
+        name:'讲师介绍',
+        path:'lecturer',
+        exact:true,
+        element:<Lecturer/>
+    }
+]
+
+export  {routeList,nav};
