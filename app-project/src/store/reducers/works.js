@@ -1,17 +1,28 @@
-export default function work(state={
-    data:{},
-    loading:true
+
+
+export default function works(state={
+    data:[],
+    loading:false,
+    loadEnd:false,
+    page:1
 },action){
     switch (action.type){
-        case 'WORK_RESET':
+        case 'LOAD':
             return {
-                data:{},
+                ...state,
                 loading:true
             };
-        case 'WORK_LOADOVER':
+        case 'LOADOVER':
             return {
-                loading:false,
-                data:action.data
+                ...state,
+                loading: true,
+                page:++state.page,
+                data:state.data.concat(action.data)
+            };
+        case 'LOADEND':
+            return {
+                ...state,
+                loadEnd:true
             }
     }
     return state;

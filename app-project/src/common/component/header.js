@@ -3,7 +3,6 @@ import isLogin from '../../store/action/isLogin'
 import {connect} from "react-redux";
 import logout from "../../store/action/logout";
 import {Link, useLocation,useNavigate} from 'react-router-dom'
-import store from "../../store";
 
 //创建history方法，可以获取上一级路由地址，实现返回上一级和下一级的操作
 import history from "../utils/history";
@@ -39,7 +38,8 @@ function Header(props){
                         display:isBtnShow?"block":"none"
                     }}
                     onClick={()=>{
-                        props.dispatch(logout())
+                        props.dispatch(logout());
+                        navigate('/login')
                     }}
                 >退出</span>
             </span>);

@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import "../../common/css/index.css";
-import getWork from "../../store/action/getWork";
+import getWorks from "../../store/action/getWorks";
 import Frame from '../../common/component/frame';
 import Course from './course'
 import Vip from './vip'
@@ -20,7 +20,7 @@ function Home(props){
     let {dispatch} =props;
 
     function getWorksData(){
-       return  dispatch(getWork())
+       return  dispatch(getWorks())
     }
 
     //副作用狗子
@@ -29,8 +29,8 @@ function Home(props){
     },[])
     return (
         <Frame
-            pullup = {true}
-            getData ={getWorksData()}
+            pullup = {false}
+            // getData ={getWorksData()}
         >
             <Tab
                 data = {imgData}

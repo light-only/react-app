@@ -3,7 +3,7 @@ import React from 'react'
 
 import Index from '../view/home/index'
 import Course from '../view/course/index'
-import Works from '../view/works/index'
+import Work from '../view/work/index'
 import Login from '../view/login/index'
 import Lecturer from '../view/lecturer/index'
 const routeList = [
@@ -21,9 +21,9 @@ const routeList = [
     },
     {
         name:'作品',
-        path:'/works',
+        path:'/work/:id',
         exact:true,
-        element:<Works/>
+        element:<Work/>
     },
     {
         name:'登录',
@@ -41,6 +41,12 @@ const routeList = [
 
 const nav = [
     {
+        name:'首页',
+        path:'/home',
+        exact: true,
+        element: <Index/>
+    },
+    {
         name:'课程安排',
         path:'/course',
         exact:true,
@@ -48,9 +54,9 @@ const nav = [
     },
     {
         name:'学生作品',
-        path:'/works',
+        path:'/work',
         exact:true,
-        element:<Works/>
+        element:<Work/>
     },
     {
         name:'讲师介绍',

@@ -1,18 +1,22 @@
 import {useRef,useEffect,useState} from "react";
-import Bscroll from 'better-scroll';
-import {clear} from "@testing-library/user-event/dist/clear";
-export default function Tab(props){
+import BScroll from 'better-scroll';
+import Slide from '@better-scroll/slide'
 
+BScroll.use(Slide)
+export default function Tab(props){
     let {data,render} = props;
     let bannerWrap = useRef(null);
     let [now,setNow] = useState(0);
     let bScroll = null;
     useEffect(()=>{
         let timer = 0;
-        bScroll = new Bscroll(bannerWrap.current,{
-            scroll:false,
+        bScroll = new BScroll(bannerWrap.current,{
+            scrollX:true,
             scrollY:false,
             eventPassthrough:'vertical',
+            slide:{
+                threshold:200
+            },
             momentum:false,
             snap:{
                 loop:true

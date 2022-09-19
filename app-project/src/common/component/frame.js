@@ -5,7 +5,6 @@ import '../css/common.css';
 // eslint-disable-next-line react-hooks/rules-of-hooks
 let innerH = useInnerHeight();
 function Frame(props){
-    console.log(props);
     return (
         <>
             <div

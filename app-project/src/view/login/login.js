@@ -11,7 +11,6 @@ function LoginPage (props) {
     const navigate = useNavigate();
     //点击登录
     function toLogin (){
-        console.log(props,'2222')
         props.dispatch(login()).then(res=>{
             navigate('/home')
         })
